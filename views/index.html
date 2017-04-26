@@ -1,0 +1,155 @@
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="./stylesheets/main.css">
+
+
+</head>
+<body ng-app="BlankApp" ng-cloak>
+ <h1>Alhamdulillah</h1>
+
+
+<div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:50px">Hero Title Here</h1>
+    <p>Lrem Hero Text</p>
+    <button class="btn btn-success dropdown-toggle">Hire me</button>
+  </div>
+</div>
+
+<input type="text" id="tid">
+<form id="checkout" method="post" action="payment/checkout">
+
+<label for="first name">First Name
+ <input type="text" name="first_name">
+</label>
+<label for="last name">Last Name
+  <input type="text" name="last_name">
+</label>
+<label for="email">Email
+  <input type="email" name="email">
+</label>
+
+
+
+<label for="address">Address
+  <input type="text" name="street_address">
+</label>
+<label for="address2">Address2
+  <input type="text" name="extended_address">
+</label>
+<label for="city">City
+  <input type="text" name="locality">
+</label>
+
+<label for="state">State
+  <input type="text" name="region">
+</label>
+<label for="postal">Postal Code
+  <input type="text" name="postal_code">
+</label>
+
+<label for="same">Same
+  <input type="checkbox" name="add_billing_address_to_payment_method">
+</label>
+
+<!--
+
+<label for="ccv">ccv
+  <input type="tel" name="ccv">
+</label>
+
+
+  
+
+<label for="credit card">Credit Card
+  <input type="text" name="number">
+</label>
+
+<label for="Expiration Date">Expiration Date
+  <input type="text" name="expiration_date">
+</label>
+-->
+<label for="email">Email
+  <input type="email" name="cst_mail">
+</label>
+<div id="dropin-container"></div>
+
+
+  <input type="submit" id="submit" value="Pay">
+  
+</form>
+
+
+
+<script src="https://js.braintreegateway.com/js/braintree-2.31.0.min.js"></script>
+<script>
+// We generated a client token for you so you can test out this code
+// immediately. In a production-ready integration, you will need to
+// generate a client token on your server (see section below).
+
+var name = "<%= name %>";
+console.log(name);
+
+function cw(){
+var clientToken = $('#tid').val();
+
+braintree.setup(clientToken, "dropin", {
+  container: "dropin-container"
+});
+console.log(clientToken)
+}
+
+$(function(){
+
+
+
+
+  $('#tid').change(function(){
+    cw();
+  });
+
+
+
+})
+
+</script>
+
+
+  
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">    
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    angular.module('BlankApp', ['ngMaterial']);
+  </script>
+  
+</body>
+</html>
