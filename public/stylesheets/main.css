@@ -15,7 +15,7 @@
   transform: translate(-50%, -50%);
   color: white;
 }
-/*
+
 .hero-text button {
   border: none;
   outline: 0;
@@ -31,4 +31,366 @@
   background-color: #555;
   color: white;
 }
-*/
+
+.form-container{
+       position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+label#largeFile{
+      display: inline-block;
+    width: 100%;
+}
+
+#upload-logo{
+position: absolute;
+    margin-top: 5%;
+    font-size: 72px;
+    color: cornflowerblue;
+    margin-left: 15px;
+}
+
+label#largeFile:after {
+  position:absolute;
+  width:60%;
+  max-width:800px;
+  content:"Upload your file";
+  left:0;
+  right:0;
+  margin:50px auto;
+  text-align:center;
+  padding:50px 0px 50px 0px;
+  border-radius:10px;
+  border:5px dashed #ccc;
+  color:transparent;
+  font-family:"Helvetica Neue", Helvetica, Arial;
+  font-size:30px; 
+}
+
+label#largeFile:hover:after {
+ /* background:#ccc;
+  color:#fff;*/
+  cursor:pointer;
+}
+
+
+label#largeFile input#file {
+     width: 102px;
+      /* width: 0px; */
+    /* height: 0px; 
+    margin-top: 112px;
+    overflow: hidden;
+    width: 102px;
+    display: inline-block;
+    margin-right: 27%;
+    */
+    width: 102px;
+    margin-top: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type='file'] {
+  color:transparent;
+      display: inline-block;
+    width: 100%;
+    height: 300px; 
+    opacity: 0;
+}
+
+
+.progress{
+  display: inline-block;
+    position: absolute;
+    background-color: red;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bolder;
+    top: 50%;
+}
+
+
+.droppable{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    border: 1px dashed blue;
+}
+
+.droppable:hover{background-color:lavender; border: 3px dashed purple; }
+
+.droppable h5{display: inline-block;}
+
+#fileupload{
+  text-align: center;
+}
+
+#loadp{
+       display: inline-block;
+    position: absolute;
+    margin-top: -33px;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+#false-file{position: absolute;
+    margin-top: 120px;
+    margin-left: 30px}
+
+md-progress-circular{margin-left: auto; margin-right: auto;}
+
+#loader1{
+  display: none;
+    position: fixed;
+    z-index: 9999999;
+    top: 50%;
+    left: 50%;
+
+
+}
+
+md-content.md-default-theme, md-content{background-color: #fff}
+
+#upimg{ 
+  width: 300px;
+    border: 10px solid;
+    border-radius: 30px;
+
+}
+
+.upimg-wrap{   
+  width:100%; 
+    text-align: center;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+   
+.material-icons.white { 
+  
+ display: inline-block;
+    width: 32px;
+    height: 45px;
+    border: 6px solid white;
+    border-radius: 10px;
+    background-color: #ccc;
+    margin-top: 1px;
+
+ }
+.white-wrap{
+     display: inline-block;
+    border: 1px solid black;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+.others-case{
+  display: flex;
+      text-align: center;
+    width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .black{color: black;} .silver{color: silver;} .gold{color: gold;} .wood{color: maroon;}
+
+.material-icons.md-75{font-size: 75px;}
+.md-75{padding-top:5px;}
+.material-icons{cursor: pointer;}
+
+
+
+
+
+
+
+
+
+
+
+
+.quantity {
+  position: relative;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+      width: 65px;
+  height: 42px;
+  line-height: 1.65;
+  float: left;
+  display: block;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  border: 1px solid #eee;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  float: left;
+  position: relative;
+  height: 42px;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  border-left: 1px solid #eee;
+  width: 20px;
+  text-align: center;
+  color: #333;
+  font-size: 13px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+  line-height: 1.7;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  top: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  bottom: -1px;
+  height: 50%;
+}
+
+
+
+
+
+#qty{    text-align: center;
+    display: flex;
+    width: 200;
+    margin-left: auto;
+    margin-right: auto;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) and (min-width: 0px)  {
+
+h1{text-align: center;}
+
+#file{width: 0px;
+    height: 0px;}
+
+    .hero-text h1{font-size: 25px !important; }
+    .hero-image{height: 30%}
+    .hero-text button{display: none;}
+
+    .droppable{
+      border: none;
+    width: 100%;
+    height: 50px;
+    }
+
+    #false-file h5{display: none;}
+    #false-file{    width: 100%;
+    margin: 0px;
+    text-align: center;}
+
+    .droppable:hover{background-color: transparent; border: none; }
+
+    #upimg{width:70%;}
+
+
+
+    .white-wrap {
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    margin-top: 12px;
+}
+
+
+.material-icons.white{
+display: inline-block;
+    width: 26px;
+    height: 37px;
+    border: 6px solid white;
+    border-radius: 10px;
+    background-color: #ccc;
+    margin-top: 0px;
+}
+
+
+.others-case {
+    display: flex;
+    text-align: center;
+    width: 290px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.material-icons.md-75 {
+    font-size: 65px;
+}
+
+
+
+}

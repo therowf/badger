@@ -1,1 +1,146 @@
+
+
+
+<div id="main-wrap">
+<div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:50px">Hero Title Here</h1>
+    <p>Lrem Hero Text</p>
+    <button class="btn btn-success dropdown-toggle">Hire me</button>
+  </div>
+</div>
+
+
 <h1>Alhamdulillah</h1>
+<h6>{{pori}}</h6>
+<!--
+<div class="form-container">
+<form id='fileupload' enctype="multipart/form-data" method="post" action="payment/cart">
+<label id="largeFile" for="file">
+    <i class='fa fa-cloud-upload' id='upload-logo'></i> 
+  <input type="file" name="upl" id="file" capture="camera" accept="image/*">
+  </label>
+<input type="submit" value="Upload" style="display:none">
+
+</form>
+</div>
+-->
+ 
+
+<form id='fileupload' enctype="multipart/form-data" method="post" action="payment/cart">
+<div class="droppable" >
+  <div id="false-file">
+   <md-button class="md-raised md-primary uploadbtn">Select</md-button>
+  <h5>Or drop file on here</h5>
+  </div>
+<input type="file" name="upl" id="file" capture="camera" accept="image/*" >
+
+
+</div>
+
+<!--<input type="submit" value="Upload" >-->
+
+
+
+
+</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+
+
+
+
+$(function(){
+
+$(document.body).on('click', '.uploadbtn', function(){
+ $("#file").on("click")
+  $("#file").click();
+     
+})
+
+
+
+
+
+
+})
+
+
+
+
+
+
+document.getElementById("file").onchange = function() {
+
+
+
+  document.getElementById("fileupload").submit();
+  $("#main-wrap").css("opacity", ".2");
+  $("#main-wrap").css("pointer-events", "none");
+
+//$('#loader1').css('display','block');
+$('#loader1').show()
+ $('#loadp').html(Math.round(20.00));
+
+
+var formData = new FormData();
+var file = document.getElementById('file').files[0];
+formData.append('upl', file);
+var xhr = new XMLHttpRequest();
+
+// your url upload
+xhr.open('post', '/payment/cart', true);
+
+xhr.upload.onprogress = function(e) {
+  if (e.lengthComputable) {
+   var percentage = (e.loaded / e.total) * 100;
+     var percentageraw = (e.loaded / e.total);
+    //console.log(percentage + "%");
+ $('#loadp').html(Math.round(percentage));
+  }
+};
+
+xhr.onerror = function(e) {
+  console.log('Error');
+  console.log(e);
+};
+xhr.onload = function() {
+  console.log(this.statusText);
+};
+
+xhr.send(formData);
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+    </script>
+
+    

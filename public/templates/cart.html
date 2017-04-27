@@ -1,4 +1,46 @@
 
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <div class="upimg-wrap">  
+<img id="upimg">
+    </div>
+
+
+<div class="others-case">
+
+
+<div class="white-wrap"> 
+  <i class="material-icons white"></i>
+</div>
+
+<i class="material-icons md-75 black">crop_portrait</i>
+<i class="material-icons md-75 silver">crop_portrait</i>
+<i class="material-icons md-75 gold">crop_portrait</i>
+<i class="material-icons md-75 wood">crop_portrait</i>
+</div>
+
+<div id="qty">
+<div class="quantity">
+  <input type="number" min="1" max="9" step="1" value="1">
+</div>
+<h3 style="  padding: 0px;   margin: 10px 5px;">$50</h3>
+</div>
+
+
+
+
+<script>
+$(function(){
+  
+$('#upimg').attr('src', window.location.origin+'/'+pic)
+})
+
+  </script>
+
+
+
+<br><br><br>
 
   <md-content layout-padding="">
     <div>
@@ -90,6 +132,72 @@ $(function(){
 
 
 
+
+
+
+
+
+
+ 
+  $('.material-icons').click(function(){
+    var coler = $(this).css('color');
+    $('#upimg').css('border',"10px solid "+coler)
+  })
+
+
+
+
+
+
+
+
+
+
+    jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
+    jQuery('.quantity').each(function() {
+      var spinner = jQuery(this),
+        input = spinner.find('input[type="number"]'),
+        btnUp = spinner.find('.quantity-up'),
+        btnDown = spinner.find('.quantity-down'),
+        min = input.attr('min'),
+        max = input.attr('max');
+
+      btnUp.click(function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue >= max) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue + 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+      btnDown.click(function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue <= min) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue - 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 })
 
 

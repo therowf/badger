@@ -33,7 +33,7 @@ router.post('/cart', upload.single('upl'), function(req,res){
  })
 */
 
-pic = req.file.filename;
+pic = req.file.path;
 
 console.log(pic)
 
@@ -165,7 +165,7 @@ router.get('/success', function(req,res){
 
 
 
-router.get('/', function(req, res, next) {
+router.get('/payment', function(req, res, next) {
 
   gateway.clientToken.generate({}, function (err, response) {
 
@@ -175,7 +175,7 @@ router.get('/', function(req, res, next) {
     }else{
       pori = 'dfksjak kj lkadsjf kljas lfjal fjdkl jaklsj fklafj ldksjl fdajldkas j';
        token_t = response.clientToken;
-        res.render('index.ejs', {name:token_t, poris: pori, img:pic})
+        res.render('index.ejs', {name:response.clientToken, poris: pori, img:pic})
   
      
     }
